@@ -1,4 +1,4 @@
-let boxWid = window.innerWidth / 25;
+let boxWid = window.innerWidth / 18;
 let tableArr = []; //2D array of grid. 1 - Alive, 0 - Dead
 let fps = 1; // 30 fps at start, 2 fps when game is active
 let state = 0; // 0 = Setup, 1 = Active
@@ -110,10 +110,15 @@ function draw() {
 
   for (let i = 0; i < 100; i++) {
     // give the fill opacity based on the row number
-    fill(0,0,0, 255- ( i * 2.55))
-    noStroke(); 
-    rect(0, document.querySelector("canvas").height - i, document.querySelector("canvas").width, 1)
+    fill(0, 0, 0, 255 - i * 2.55);
+    noStroke();
+    rect(
+      0,
+      document.querySelector("canvas").height - i,
+      document.querySelector("canvas").width,
+      1
+    );
     // turn stroke back on
-    stroke(0)
+    stroke(0);
   }
 }
